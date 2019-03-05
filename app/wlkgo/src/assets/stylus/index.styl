@@ -1,0 +1,121 @@
+
+@import "./common.styl"
+  
+.wrap
+  display flex
+  flex-direction column
+//内容部分
+section
+  flex 1
+  overflow-x hidden
+  overflow-y auto
+  .banner
+    width 100%
+    height 1.17rem
+    img
+      width 100%
+      height auto
+    .swiper-pagination-bullets
+      bottom -.15rem
+  nav 
+    margin-top 10px
+    background-color #ffffff
+    padding 5px .15rem 10px
+    border-top 1px solid #eee
+    border-bottom 1px solid #eee
+    .list
+      display flex
+      flex-wrap wrap
+      .item
+        width 25%
+        font-size 12px
+        text-align center
+        img
+          width 50%
+          margin 10px auto 0 auto
+  .pro1
+    width 100%
+    display flex
+    justify-content space-between
+    margin-top 10px
+    .item
+      width 1.18rem
+      background-color #fff
+      img
+       width 1.18rem
+       height 1.18rem      
+  .lft
+    background-color #fff
+    margin-top .2rem
+    border-top 1px solid #eee
+    border-bottom 1px solid #eee
+    padding-bottom 10px
+    .tit
+      font-size  .16rem
+      line-height .32rem
+      background url(https://m.wlkgo.com/css/../images/i_tit_bg.png) no-repeat 8px center
+      background-size auto .16rem
+      text-indent .16rem
+      color #8c8b8b
+      display flex
+      justify-content space-between
+      span
+        margin-right .21rem
+        font-size .14rem
+    .lftCon
+      width 100%
+      display flex
+      .item
+        flex 1
+        img 
+          width 1.24rem
+          margin 0 auto
+      .br
+        border-left 1px solid #eee
+        border-right 1px solid #eee 
+  .renqi
+    margin-top 10px
+    .swiper-slide
+      background: #fff url(https://m.wlkgo.com/css/../images/lft_line_03.png) repeat-y right
+      .pic
+        width 1.03rem
+        height 1.03rem
+        margin 0 auto
+        margin-bottom 10px
+      .title
+        width: 82%;
+        margin: 0px auto;
+        text-align: left;
+        color: #909090;
+        font-size: .12rem;
+        height .32rem
+        line-height .16rem
+       
+      .price
+          width: 82%;
+          line-height: .26em;
+          color: #ff0101;
+          font-size: .18em;
+          margin: 0px auto;
+          display flex
+          align-items center
+          justify-content space-between
+          img
+            width .27rem
+            height .26rem
+  .ad
+    margin-top 10px
+    ul
+      display flex
+      justify-content space-between
+      li
+        img
+          width 1.85rem
+          height .82rem  
+  .copyright
+    font-size: 12px;
+    color: #8c8b8b;
+    text-align: center
+    line-height .16rem
+    margin-top 8px
+    margin-bottom .27rem
