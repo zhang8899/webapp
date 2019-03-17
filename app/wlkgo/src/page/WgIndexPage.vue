@@ -18,7 +18,7 @@
       <div class="swiper-container">
 				<div class="swiper-wrapper"  v-if="indexData">
 					<div class="swiper-slide" v-for="(p,i) in indexData.bannerPic" :key="i">
-					  <a href="">
+					  <a @click.stop="">
               <img :src="p"  alt="">
             </a>
 					</div>
@@ -29,44 +29,40 @@
     <nav>
       <ul class="list" v-if="indexData">
         <li class="item" v-for="(item,im) in indexData.nav" :key="im">
-          <a href="">
+          <a @click.stop="">
             <img :src="item.pic" alt="">
-           {{item.title}}
+            <span v-text="item.title"></span>
           </a>
         </li>
       </ul>
     </nav>
     <div class="pro1">
       <div class="item" v-for="(item,ip) in indexData.pro" :key="ip">
-        <a href="">
+        <a @click.stop="">
           <img :src="item" alt="">
         </a>
       </div>
     </div>
     <div class="lft">
-      <div class="tit" v-if="indexData&&indexData.lft">
-        {{indexData.lft.title}}
-      </div>
+      <div class="tit" v-if="indexData&&indexData.lft" v-text="indexData.lft.title"></div>
       <div class="lftCon"  v-if="indexData&&indexData.lft">
         <div class="item" v-for="(item,tc) in indexData.lft.pic" :key="tc"  :class="tc == 1? 'br': ''">
-          <a href="">
+          <a @click.stop="">
             <img :src="item" alt="">
           </a>
         </div>
       </div>
     </div>
     <div class="lft renqi">
-      <div class="tit" v-if="indexData&&indexData.renqi">
-       {{indexData.renqi.title}}
-      </div>
+      <div class="tit" v-if="indexData&&indexData.renqi" v-text="indexData.renqi.title"></div>
       <div class="swiper-container">
         <div class="swiper-wrapper" v-if="indexData&&indexData.renqi">
           <div class="swiper-slide" style="width: 125px" v-for="(item,sd) in indexData.renqi.goods" :key="sd">
-            <a href="">
+            <a @click.stop="">
               <img :src="item.pic" class="pic" alt="">
             </a>
             <div class="title">
-              <a href="">{{item.title}}</a>
+              <a @click.stop="" v-text="item.title"></a>
             </div>
             <div class="price">
               {{item.price}}
@@ -86,11 +82,11 @@
       <div class="swiper-container">
         <div class="swiper-wrapper" v-if="indexData&&indexData.xinpin">
           <div class="swiper-slide" style="width: 125px" v-for="(item,xd) in indexData.xinpin.goods" :key="xd">
-            <a href="">
+            <a @click.stop="">
               <img :src="item.pic" class="pic" alt="">
             </a>
             <div class="title">
-              <a href="">{{item.title}}</a>
+              <a @click.stop="">{{item.title}}</a>
             </div>
             <div class="price">
               {{item.price}}
@@ -110,11 +106,11 @@
       <div class="swiper-container">
         <div class="swiper-wrapper" v-if="indexData&&indexData.temai">
           <div class="swiper-slide" style="width: 125px" v-for="(item,ed) in indexData.temai.goods" :key="ed">
-            <a href="">
+            <a @click.stop="">
               <img :src="item.pic" class="pic" alt="">
             </a>
             <div class="title">
-              <a href="">{{item.title}}</a>
+              <a @click.stop="">{{item.title}}</a>
             </div>
             <div class="price">
              {{item.price}}
@@ -127,18 +123,18 @@
     <div class="ad">
       <ul v-if="indexData">
         <li v-for="(item,aid) in indexData.ad" :key="aid">
-          <a href="">
+          <a @click.stop="">
             <img :src="item" alt="">
           </a>
         </li>
       </ul>
     </div>
     <div class="copyright">
-      <p>© 2009-现在 wlkgo.com 版权所有 <a href="">浙B2-20160010</a></p>
+      <p>© 2009-现在 wlkgo.com 版权所有 <a @click.stop="">浙B2-20160010</a></p>
       <p> 
-        <a href="#">营业执照</a> 
-        <a href="#">食品流通许可证</a> 
-        <a href="#">增值电信业务经营许可证</a>
+        <a @click.stop="">营业执照</a> 
+        <a @click.stop="">食品流通许可证</a> 
+        <a @click.stop="">增值电信业务经营许可证</a>
       </p>
     </div>
   </section>
@@ -161,28 +157,28 @@
         </router-link>
       </li>
        <li>
-        <a >
+         <router-link to="">
           <div>
             <i><img src="https://m.wlkgo.com/images/my.png" alt=""></i>
            我的窝
           </div>
-        </a>
+        </router-link>
       </li>
       <li>
-        <a >
+         <router-link to="">
           <div>
             <i><img src="https://m.wlkgo.com/images/wcm.png" alt=""></i>
            我的订单
           </div>
-        </a>
+        </router-link>
       </li>
        <li>
-        <a >
+        <router-link to="">
           <div>
             <i><img src="https://m.wlkgo.com/images/car.png" alt=""></i>
             购物车
           </div>
-        </a>
+         </router-link>
       </li>
     </ul>
   </footer>

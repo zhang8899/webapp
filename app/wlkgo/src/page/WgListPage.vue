@@ -10,25 +10,28 @@
                 <a @click.stop="">
                 <img src="https://m.wlkgo.com/images/h3dian.png?v=20160505" alt="">
                 </a>
+                <div class="moreList">
+                    
+                </div>
             </div>
             </div>
         </header>
            <section>
             <div class="nav-left">
-                <a @click="showId(i)" v-for="(data,i) in listData.nav" :key="i" :nid="i" :class="[nid == i? 'on':'']">{{data}}</a>  
-                </div>
-                <div class="type" v-if="[cid&& nid ? 'cid = nid' :'']">
-                    <div class="item" v-for="(data,c) in listData.list[cid]" :key="c" >
-                        <a @click.stop="">
-                            <div class="tit">
-                                <i>{{data.title}}</i>
-                            </div>
-                        </a>
-                        <div class="des">
-                            <a @click.stop="" v-for="(data,eid) in data.items" :key="eid">{{data}}</a>
+                <a @click="showId(i)" v-for="(data,i) in listData.nav" :key="i" :class="{'on' : cid === i}" v-text="data.title"></a>  
+            </div>
+            <div class="type" v-show="cid === index" v-for="(data,index) in listData.nav" :key="index">
+                <div class="item"  v-for="(data,i) in data.list" :key="'s'+i">
+                    <a @click.stop="">
+                        <div class="tit">
+                            <i v-text="data.title"></i>
                         </div>
+                    </a>
+                    <div class="des">
+                        <a @click.stop="" v-for="(data,eid) in data.items" :key="eid" v-text="data"></a>
                     </div>
                 </div>
+            </div>
         </section>  
         <footer>
             <ul class="nav">
@@ -84,7 +87,6 @@ export default {
      data () {
         return {
             listData:{},
-            nid:0,
             cid:0
         }
   },
@@ -102,12 +104,12 @@ export default {
        _initData(){
             DataApi.getData(data=>{
                 console.log(data.listData)
-                 
                 this.listData = data.listData
             })
         },
-        showId(i){
-            this.nid = this.cid = i
+        showId($i){
+            console.log($i)
+            this.cid = $i
         }
        
   }
